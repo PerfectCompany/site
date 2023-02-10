@@ -1,0 +1,136 @@
+body{
+    background: rgba(150, 150, 255, 0.15);
+    margin:0;
+    padding:0;
+}
+#exit{
+    background:rgba(255, 100, 100, 0.5);
+    border:solid rgba(255, 100, 100, 1);
+}
+#buy{
+    background:rgba(100, 255, 100, 0.5);
+    border:solid rgba(100, 255, 100, 1);
+}
+.button{
+    animation-name:menubuttonanim2;
+    animation-duration:0.3s;
+    animation-fill-mode:forwards;
+    background: rgb(200, 200, 255);
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 25%;
+
+}
+.button a{
+    text-decoration:none;
+    color: rgb(50, 50, 50);
+}
+.button:hover{
+    animation-name:menubuttonanim1;
+    animation-duration:0.3s;
+    animation-fill-mode:forwards;
+    background: rgb(190, 190, 245);
+}
+.block{
+    animation-name:menurightanim2;
+    animation-duration:0.3s;
+    animation-fill-mode:forwards;
+    background: rgba(200, 200, 255, 0.1);
+    display: block;
+    margin: 1%;
+    margin-left:5%;
+    margin-right:5%;
+    padding: 1%;
+    box-shadow: 10px 10px 10px 5px rgba(0, 0, 0, 0.1);
+}
+.tts{
+    display:none;
+    color:rgb(200, 150, 255);
+}
+
+.block:hover {
+    animation-name:menurightanim1;
+    animation-duration:0.3s;
+    animation-fill-mode:forwards;
+}
+.block:hover .tts{
+    display:inline-block;
+}
+#blocks{
+    width:75%;
+}
+.lang{
+    background: rgb(150, 150, 250);
+    display: inline-block;
+    margin: 1%;
+    padding: 10px;
+    border-radius: 25%;
+    border: none;
+    color: rgb(50, 50, 50);
+}
+.lang:hover{
+    background: rgb(145, 145, 245);
+}
+#lang_changer{
+    position:fixed;
+    right:0;
+    top:0;
+    width:25%;
+}
+.course{
+    background: rgb(240, 240, 240);
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+}
+.course:hover{
+    background: rgb(230, 230, 230);
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+}
+#right_menu{
+    width:25%;
+}
+@keyframes menurightanim1{
+    0%{
+    margin-left:5%;
+    margin-right:5%;}
+    100%{
+    margin-right:3%;
+    margin-left:7%;}
+}
+@keyframes menurightanim2{
+    100%{
+    margin-left:5%;
+    margin-right:5%;}
+    0%{
+    margin-right:3%;
+    margin-left:7%;}
+}
+@keyframes menubuttonanim1{
+    0%{
+    background: rgb(200, 200, 255);}
+    100%{
+    background: rgb(190, 190, 245);}
+}
+@keyframes menubuttonanim2{
+    100%{
+    background: rgb(200, 200, 255);}
+    0%{
+    background: rgb(190, 190, 245);
+}
+@keyframes menutextanim1{
+    0%{
+    
+    }
+    100%{
+    background: rgb(190, 190, 245);}
+}
+@keyframes menutextanim2{
+    100%{
+    background: rgb(200, 200, 255);}
+    0%{
+    background: rgb(190, 190, 245);
+}

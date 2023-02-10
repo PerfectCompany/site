@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="right_menu">
+    <div id="lang_changer">
+        <button class="lang" id="lang_ua" onclick="changeLang('ua');">ua</button>
+        <button class="lang" id="lang_en" onclick="changeLang('en');">en</button>
+        <button class="lang" id="lang_ru" onclick="changeLang('ru');">ru</button>
+    </div>
+</div>
+<div id="body">
+    <div id="products"></div>
+</div>
+<script src="script.js"></script>
+<script>
+    var lang = localStorage.perfectlang;
+    var products = [
+    ['b', '#', 'disc', true]
+    //[name, image, description, always_true]
+    ];
+    function viewProduct(description, obj){
+        window.scrollTo(0, 0);
+        obj.children[1].setAttribute('width', Math.max(body.offsetWidth, body.offsetHeight) / 16 * 16);
+        obj.children[1].setAttribute('height', Math.max(body.offsetWidth, body.offsetHeight) / 16 * 9);
+        document.getElementById('products').innerHTML=obj.innerHTML + '<br>' + description + '<br>' + '<button id="exit" onclick="fillProducts()">Назад</button><button id="buy" onclick="buyProduct()">Придбати</button>';
+        document.getElementById('products').setAttribute('class', 'product');
+    }
+    function buyProduct(){
+        var a = prompt('Напишіть ваш номер телефону, вам передзвонять (Максимум через день)');
+        alert(a);
+    }
+    function fillProducts(){
+        document.getElementById('products').removeAttribute('class');
+        document.getElementById('products').innerHTML='';
+        for (var i=0;i<products.length;i++){
+            if (products[i][3]){
+                var div = document.createElement('div');
+                div.setAttribute('onclick', 'viewProduct("' + products[i][2] + '", this);');
+                div.setAttribute('class', 'product');
+                div.innerHTML = '<i>' + products[i][0] + '</i>' + '<br><img src="' + products[i][1] + '" width=320 height=180>';
+                document.getElementById('products').appendChild(div);
+            }
+        }
+    }
+    fillProducts();
+</script>
+</body>
+</html>
